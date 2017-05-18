@@ -8,8 +8,8 @@
 
 function calculatorModule() {
 
-  var memory = 0;
   var total = 0;
+  var memory = 0;
 
   /**
    * sets the `total` to the number passed in
@@ -35,12 +35,18 @@ function calculatorModule() {
     return total;
    }
 
-
   /**
    * Sums the value passed in with `total`
    * @param { Number } x
    */
 
+   function add(x) {
+    if(typeof x === "number"){
+      total += x;
+    } else {
+      throw error;
+    }
+   }
 
   /**
    * Subtracts the value passed in from `total`
@@ -81,7 +87,8 @@ function calculatorModule() {
 
    return {
     load: load,
-    getTotal: getTotal
-   }
+    getTotal: getTotal,
+    add: add
+   };
 
 };
