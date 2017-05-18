@@ -53,6 +53,13 @@ function calculatorModule() {
    * @param  { Number } x
    */
 
+   function subtract(x){
+    if(typeof x === "number"){
+      total -= x;
+    } else {
+      throw error;
+    }
+   }
 
   /**
    * Multiplies the value by `total`
@@ -88,7 +95,8 @@ function calculatorModule() {
    return {
     load: load,
     getTotal: getTotal,
-    add: add
+    add: add,
+    subtract: subtract
    };
 
 };
