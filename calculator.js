@@ -14,6 +14,8 @@ function calculatorModule() {
     function validate(x){
     if(typeof x === "number"){
       return true;
+    } else {
+      throw error;
     }
   } //FIGURE OUT HOW TO USE THIS INSTEAD OF REPEATING IF STATEMENTS
 
@@ -25,11 +27,8 @@ function calculatorModule() {
 
    function load (x){
     total = x;
-    if(validate(x)){
-      return total;
-    } else {
-      throw error;
-    }
+    validate(x);
+    return total;
    }
 
   /**
@@ -47,11 +46,8 @@ function calculatorModule() {
    */
 
    function add(x) {
-    if(validate(x)){
-      total += x;
-    } else {
-      throw error;
-    }
+    validate(x);
+    total += x;
    }
 
   /**
@@ -60,11 +56,8 @@ function calculatorModule() {
    */
 
    function subtract(x){
-    if(validate(x)){
-      total -= x;
-    } else {
-      throw error;
-    }
+    validate(x);
+    total -= x;
    }
 
   /**
@@ -73,11 +66,8 @@ function calculatorModule() {
    */
 
    function multiply(x){
-    if(validate(x)){
-      total *= x;
-    } else {
-      throw error;
-    }
+    validate(x);
+    total *= x;
    }
 
 
@@ -87,11 +77,8 @@ function calculatorModule() {
    */
 
    function divide(x){
-    if(validate(x)){
-      total /= x;
-    } else {
-      throw error;
-    }
+    validate(x);
+    total /= x;
    }
 
 
@@ -138,4 +125,4 @@ function calculatorModule() {
     clearMemory: clearMemory
    };
 
-};
+}
