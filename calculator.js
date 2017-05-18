@@ -66,6 +66,14 @@ function calculatorModule() {
    * @param  { Number } x
    */
 
+   function multiply(x){
+    if(typeof x === "number"){
+      total *= x;
+    } else {
+      throw error;
+    }
+   }
+
 
   /**
    * Divides the value passing in by `total`
@@ -96,7 +104,8 @@ function calculatorModule() {
     load: load,
     getTotal: getTotal,
     add: add,
-    subtract: subtract
+    subtract: subtract,
+    multiply: multiply
    };
 
 };
