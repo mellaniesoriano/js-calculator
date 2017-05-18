@@ -80,6 +80,14 @@ function calculatorModule() {
    * @param  { Number } x
    */
 
+   function divide(x){
+    if(typeof x === "number"){
+      total /= x;
+    } else {
+      throw error;
+    }
+   }
+
 
   /**
    * Return the value stored at `memory`
@@ -105,7 +113,8 @@ function calculatorModule() {
     getTotal: getTotal,
     add: add,
     subtract: subtract,
-    multiply: multiply
+    multiply: multiply,
+    divide: divide
    };
 
 };
