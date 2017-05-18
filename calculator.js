@@ -11,6 +11,12 @@ function calculatorModule() {
   var total = 0;
   var memory = 0;
 
+    function validate(x){
+    if(typeof x === "number"){
+      return true;
+    }
+  } //FIGURE OUT HOW TO USE THIS INSTEAD OF REPEATING IF STATEMENTS
+
   /**
    * sets the `total` to the number passed in
    * @param  { Number } x
@@ -19,7 +25,7 @@ function calculatorModule() {
 
    function load (x){
     total = x;
-    if(typeof x === "number"){
+    if(validate(x)){
       return total;
     } else {
       throw error;
@@ -41,10 +47,10 @@ function calculatorModule() {
    */
 
    function add(x) {
-    if(typeof x === "number"){
+    if(validate(x)){
       total += x;
     } else {
-      throw new Error("error");
+      throw error;
     }
    }
 
@@ -54,7 +60,7 @@ function calculatorModule() {
    */
 
    function subtract(x){
-    if(typeof x === "number"){
+    if(validate(x)){
       total -= x;
     } else {
       throw error;
@@ -67,7 +73,7 @@ function calculatorModule() {
    */
 
    function multiply(x){
-    if(typeof x === "number"){
+    if(validate(x)){
       total *= x;
     } else {
       throw error;
@@ -81,7 +87,7 @@ function calculatorModule() {
    */
 
    function divide(x){
-    if(typeof x === "number"){
+    if(validate(x)){
       total /= x;
     } else {
       throw error;
