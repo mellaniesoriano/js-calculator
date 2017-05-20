@@ -28,7 +28,7 @@ function calculatorModule() {
    function load (x){
     total = x;
     validate(x);
-    return total;
+     return total;
    }
 
   /**
